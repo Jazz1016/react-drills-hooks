@@ -1,21 +1,23 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+function App() {
+  const [person, setPerson] = useState("");
+  useEffect(() => {
+    axios.get("https://swapi.co/api/people/4").then(res => {
+      setPerson(res.data);
+    });
+  }, []);
+  console.log(person);
+  return (
+    <div className="App">
+      name: <h4>{person.name}</h4>
+      gender: <h4>{person.gender}</h4>
+      height: <h4>{person.height}</h4>
+      birth year: <h4>{person.birth_year}</h4>
+    </div>
+  );
 }
 
 export default App;
