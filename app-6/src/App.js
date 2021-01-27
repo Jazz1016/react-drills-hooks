@@ -1,31 +1,30 @@
 import React, { useState } from "react";
-import Todo from "./Todo";
+import Todo from "./components/Todo";
 
-function App() {
+const App = () => {
   const [input, setInput] = useState("");
   const [arr, setArr] = useState([]);
-
-  let displayList = arr.map((item, i) => {
-    // console.log(el);
-    return <Todo item={item} key={i} />;
+  let list = arr.map((el, i) => {
+    return <Todo key={i} item={el} />;
   });
   return (
     <div>
+      <h4>My to-do list:</h4>
       <input
-        onChange={e => {
+        onChange={(e) => {
           setInput(e.target.value);
         }}
-      />
+      />{" "}
       <button
-        onClick={() => {
-          setArr([...arr, input]);
+        onClick={(e) => {
+          setArr([arr, input]);
         }}
       >
         Add
       </button>
-      {displayList}
+      <section>{list}</section>
     </div>
   );
-}
+};
 
 export default App;
