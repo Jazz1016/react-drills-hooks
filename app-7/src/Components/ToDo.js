@@ -1,3 +1,11 @@
 import React from "react";
 
-export default ToDo;
+function Todo(props) {
+  return (
+    <div>
+      <h3>{props.item}</h3>
+    </div>
+  );
+}
+
+export default Todo;

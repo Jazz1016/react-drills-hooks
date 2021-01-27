@@ -3,27 +3,28 @@ import React, { useState } from "react";
 function App() {
   const [input, setInput] = useState("");
   const [arr, setArr] = useState([
-    "spaghetti",
-    "ice cream",
-    "sushi",
-    "bologna",
-    "cheese"
+    "apply",
+    "orange",
+    "jar",
+    "coin",
+    "flyer",
+    "wiener",
   ]);
-  let arrDisplay = arr
-    .filter(el => {
-      return el.includes(input);
+  let listDisplay = arr
+    .filter((word) => {
+      return word.includes(input);
     })
-    .map(el => {
-      return <h2>{el}</h2>;
+    .map((word) => {
+      return <h2>{word}</h2>;
     });
   return (
     <div>
       <input
-        onChange={e => {
+        onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-      {arrDisplay}
+      <section>{listDisplay}</section>
     </div>
   );
 }

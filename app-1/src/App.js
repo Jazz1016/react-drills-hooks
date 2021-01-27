@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-function App() {
-  const [input, setInput] = useState("");
+function Input() {
+  const [Input, setInput] = useState("");
   return (
     <div>
       <input
-        onChange={e => {
+        onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-      <section>{input}</section>
+      <section>{Input}</section>
     </div>
   );
 }
 
-export default App;
+export default Input;

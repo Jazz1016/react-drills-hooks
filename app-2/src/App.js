@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 function App() {
-  const [arr, setArr] = useState([
+  const [list, useList] = useState([
+    "banana",
     "spaghetti",
-    "ice cream",
-    "sushi",
-    "bologna",
-    "cheese"
+    "pineapple",
+    "pomegranate",
+    "orange",
   ]);
-  let arrDisplay = arr.map(el => {
-    return <h2>{el}</h2>;
+  let listDisplay = list.map((word) => {
+    return <h1>{word}</h1>;
   });
-  return <div>{arrDisplay}</div>;
+  return <div>{listDisplay}</div>;
 }
 
 export default App;

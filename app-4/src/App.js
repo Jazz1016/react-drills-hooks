@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 
 function App() {
-  const [input, setInput] = useState(""),
-    [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
+
   return (
     <div>
       <input
-        onChange={e => {
-          setInput(e.target.value);
+        onChange={(e) => {
+          setUser(e.target.value);
         }}
-        name="username"
       />
       <input
-        onChange={e => {
-          setPassword(e.target.value);
+        onChange={(e) => {
+          setPass(e.target.value);
         }}
-        name="password"
       />
       <button
-        onClick={() => {
-          alert(`username: ${input} password: ${password}`);
+        onClick={(e) => {
+          alert(`User: ${user} Password: ${pass}`);
         }}
       >
-        Login
+        login
       </button>
     </div>
   );
